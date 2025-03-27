@@ -2,6 +2,7 @@
 #include "Pet.h"
 #include "Dog.h"
 #include "Cat.h"
+#include "AlienCat.h"
 
 int main() {
     Pet pet1("Rex", "Dog", 3, 6);
@@ -35,6 +36,12 @@ int main() {
     cat1.printInfo();
     cat1.makeSound();
 
+    //testing the alien cat object
+    AlienCat alienCat1("Ziggy", "Alien Cat", 1, 5, "Laser Pointer", "Happy");
+    std::cout << "\nAlien Cat Info:\n";
+    alienCat1.printInfo();
+    alienCat1.makeSound();
+
     //polymorphism
     
     Pet* petPtr = new Cat("Tuna", "Cat", 2, 4, "Mouse Toy");
@@ -46,6 +53,11 @@ int main() {
     petPtr->printInfo();
     petPtr->makeSound();
     delete petPtr; // Clean up
-    
+
+    petPtr = new AlienCat("Zara", "Alien Cat", 3, 1, "Space Ball", "Excited");
+    petPtr->printInfo();
+    petPtr->makeSound();
+    delete petPtr; // Clean up
+
     return 0;
 }

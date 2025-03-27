@@ -14,6 +14,7 @@
                 "/workspaces/cpp_virtualPet/Pet.cpp",
                 "/workspaces/cpp_virtualPet/Dog.cpp",
                 "/workspaces/cpp_virtualPet/Cat.cpp",
+                "/workspaces/cpp_virtualPet/AlienCat.cpp",
                 "-o",
                 "/workspaces/cpp_virtualPet/main"
             ],
