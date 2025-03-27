@@ -36,16 +36,16 @@ int main() {
     cat1.makeSound();
 
     //polymorphism
-    std::cout << std::endl;
+    
     Pet* petPtr = new Cat("Tuna", "Cat", 2, 4, "Mouse Toy");
     petPtr->printInfo();
     petPtr->makeSound();
     delete petPtr; // Clean up
-    std::cout << std::endl;
-    Pet* petPtr = new Dog("Fluffy", "Dog", 4, 2, "Poodle");
+    
+    petPtr = new Dog("Fluffy", "Dog", 4, 2, "Poodle");
     petPtr->printInfo();
     petPtr->makeSound();
     delete petPtr; // Clean up
-
+    
     return 0;
 }
