@@ -1,18 +1,27 @@
 #include "Pet.h"
+#include <iostream>
+
+// Initialize the static variable
+int Pet::totalPets = 0;
 
 // Default constructor
-Pet::Pet() : name("Unnamed"), species("Unknown"), age(0), hungerLevel(5) {}
-
-// Parameterized constructor
-Pet::Pet(const std::string& name, const std::string& species, int age, int hungerLevel)
-    : name(name), species(species), age(age), hungerLevel(hungerLevel) {}
-
-// Destructor
-Pet::~Pet(){
-    std::cout << "Pet has been destroyed." << std::endl;
+Pet::Pet() : name("Unknown"), species("Unknown"), age(0), hungerLevel(0) {
+    totalPets++; // Increment totalPets when a new pet is created
 }
 
-// Accessors
+// Constructor with parameters
+Pet::Pet(const std::string& name, const std::string& species, int age, int hungerLevel)
+    : name(name), species(species), age(age), hungerLevel(hungerLevel) {
+    totalPets++; // Increment totalPets when a new pet is created
+}
+
+// Destructor
+Pet::~Pet() {
+    std::cout << "Pet " << name << " has been destroyed." << std::endl;
+    totalPets--; // Decrement totalPets when a pet is destroyed
+}
+
+// Accessors (Getters)
 std::string Pet::getName() const {
     return name;
 }
@@ -29,7 +38,7 @@ int Pet::getHungerLevel() const {
     return hungerLevel;
 }
 
-// Mutators
+// Mutators (Setters)
 void Pet::setName(const std::string& name) {
     this->name = name;
 }
@@ -39,15 +48,11 @@ void Pet::setSpecies(const std::string& species) {
 }
 
 void Pet::setAge(int age) {
-    if (age >= 0) {
-        this->age = age;
-    }
+    this->age = age;
 }
 
 void Pet::setHungerLevel(int level) {
-    if (level >= 0 && level <= 10) {
-        hungerLevel = level;
-    }
+    this->hungerLevel = level;
 }
 
 // CompareTo
@@ -57,14 +62,18 @@ int Pet::compareTo(const Pet& other) const {
     return 0;
 }
 
-// Output
+// Output Function
 void Pet::printInfo() const {
-    std::cout << "Pet Name: " << name << std::endl;
-    std::cout << "Species: " << species << std::endl;
-    std::cout << "Age: " << age << std::endl;
-    std::cout << "Hunger Level: " << hungerLevel << "/10" << std::endl;
+    std::cout << "Name: " << name << "\nSpecies: " << species
+              << "\nAge: " << age << "\nHunger Level: " << hungerLevel << std::endl;
 }
 
+// Other functions
 void Pet::makeSound() const {
-    std::cout << name << " made an undefined noise.\n";
+    std::cout << name << " made an undefined sound." << std::endl;
+}
+
+// Static function to get the total number of pets
+int Pet::getTotalPets() {
+    return totalPets;
 }

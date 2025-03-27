@@ -11,6 +11,9 @@ private:
     int age;
     int hungerLevel; // 0 (full) to 10 (starving)
 
+    // Static variable to track the total number of pets
+    static int totalPets;
+
 public:
     // Constructors
     Pet();
@@ -39,6 +42,9 @@ public:
 
     // Other functions
     virtual void makeSound() const;
+
+    // Static function to get the total number of pets
+    static int getTotalPets();
 };
 
 #endif
