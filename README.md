@@ -7,3 +7,4 @@ virtual-pet/
 ├── Pet.cpp
 └── Pet.h
 
+The custom pet that I added into the program is an Alien Cat pet and what it can do is have varying communication styles. The challenge I implemented was to add a static class variable that keeps track of the total number of pets in the virtual manager.
