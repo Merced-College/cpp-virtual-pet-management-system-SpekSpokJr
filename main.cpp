@@ -37,10 +37,11 @@ int main() {
     cat1.makeSound();
 
     //testing the alien cat object
-    AlienCat alienCat1("Ziggy", "Alien Cat", 1, 5, "Laser Pointer", "Happy");
+    AlienCat alienCat1("Zara", "Alien Cat", 1, 5, "Telepathy", "Curious");
     std::cout << "\nAlien Cat Info:\n";
     alienCat1.printInfo();
     alienCat1.makeSound();
+
 
     //polymorphism
     
@@ -54,10 +55,12 @@ int main() {
     petPtr->makeSound();
     delete petPtr; // Clean up
 
-    petPtr = new AlienCat("Zara", "Alien Cat", 3, 1, "Space Ball", "Excited");
+    petPtr = new AlienCat("Zog", "Alien Cat", 3, 1, "Light Pulses", "Happy");
     petPtr->printInfo();
     petPtr->makeSound();
     delete petPtr; // Clean up
+
+
 
     return 0;
 }

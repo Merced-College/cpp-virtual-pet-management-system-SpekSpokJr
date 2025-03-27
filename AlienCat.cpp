@@ -2,20 +2,20 @@
 #include <iostream>
 
 // Default constructor
-AlienCat::AlienCat() : Pet(), favoriteToy("Unknown"), mood("Neutral") {}
+AlienCat::AlienCat() : Pet(), CommunicationStyle("Unknown"), mood("Neutral") {}
 
 // Constructor with parameters
-AlienCat::AlienCat(const std::string& name, const std::string& species, int age, int hungerLevel, const std::string& favoriteToy, const std::string& mood)
-    : Pet(name, species, age, hungerLevel), favoriteToy(favoriteToy), mood(mood) {}
+AlienCat::AlienCat(const std::string& name, const std::string& species, int age, int hungerLevel, const std::string& CommunicationStyle, const std::string& mood)
+    : Pet(name, species, age, hungerLevel), CommunicationStyle(CommunicationStyle), mood(mood) {}
 
-// Setter for favoriteToy
-void AlienCat::setFavoriteToy(const std::string& favoriteToy) {
-    this->favoriteToy = favoriteToy;
+// Setter for CommunicationStyle
+void AlienCat::setCommunicationStyle(const std::string& CommunicationStyle) {
+    this->CommunicationStyle = CommunicationStyle;
 }
 
-// Getter for favoriteToy
-std::string AlienCat::getFavoriteToy() const {
-    return favoriteToy;
+// Getter for CommunicationStyle
+std::string AlienCat::getCommunicationStyle() const {
+    return CommunicationStyle;
 }
 
 // Setter for mood
@@ -31,7 +31,7 @@ std::string AlienCat::getMood() const {
 // Override printInfo
 void AlienCat::printInfo() const {
     Pet::printInfo(); // Call base class printInfo
-    std::cout << "Favorite Toy: " << favoriteToy << std::endl;
+    std::cout << "Communication Style: " << CommunicationStyle << std::endl;
     std::cout << "Mood: " << mood << std::endl;
 }
 

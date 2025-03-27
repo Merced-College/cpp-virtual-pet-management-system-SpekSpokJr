@@ -6,7 +6,7 @@
 
 class AlienCat : public Pet {
 private:
-    std::string favoriteToy;
+    std::string CommunicationStyle;
     std::string mood;
 
 public:
@@ -14,13 +14,13 @@ public:
     AlienCat();
 
     // Constructor with parameters
-    AlienCat(const std::string& name, const std::string& species, int age, int hungerLevel, const std::string& favoriteToy, const std::string& mood);
+    AlienCat(const std::string& name, const std::string& species, int age, int hungerLevel, const std::string& CommunicationStyle, const std::string& mood);
 
-    // Setter for favoriteToy
-    void setFavoriteToy(const std::string& favoriteToy);
+    // Setter for CommunicationStyle
+    void setCommunicationStyle(const std::string& CommunicationStyle);
 
-    // Getter for favoriteToy
-    std::string getFavoriteToy() const;
+    // Getter for CommunicationStyle
+    std::string getCommunicationStyle() const;
 
     // Setter for mood
     void setMood(const std::string& mood);
