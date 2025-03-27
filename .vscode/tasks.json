@@ -10,6 +10,7 @@
                 "main.cpp",
                 "Pet.cpp",
                 "Dog.cpp",
+                "Cat.cpp",
                 "-o",
                 "main"
                 
